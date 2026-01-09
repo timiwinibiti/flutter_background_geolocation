@@ -299,6 +299,51 @@ This mode uses almost no battery (< 1% per day) but gives very coarse tracking.
 | Complexity | Simple | Managed for you |
 | Production ready | For short sessions | For all-day tracking |
 
+## Quick Reference Card
+
+### Three-Line Setup
+```dart
+bg.BackgroundGeolocation.onLocation((location) => print(location));
+await bg.BackgroundGeolocation.ready(bg.Config(desiredAccuracy: bg.Config.DESIRED_ACCURACY_HIGH, distanceFilter: 10.0));
+await bg.BackgroundGeolocation.start();
+```
+
+### Essential Methods
+| Method | Purpose |
+|--------|---------|
+| `ready(config)` | Initialize with configuration (call once) |
+| `start()` | Begin tracking (starts in STATIONARY state) |
+| `stop()` | Stop all tracking |
+| `changePace(bool)` | Manually force MOVING/STATIONARY state |
+| `getCurrentPosition()` | Get location right now (one-time) |
+
+### Essential Events
+| Event | When it Fires |
+|-------|---------------|
+| `onLocation` | New location recorded |
+| `onMotionChange` | Switched between MOVING ↔ STATIONARY |
+| `onActivityChange` | Activity detected (walking, driving, etc.) |
+| `onProviderChange` | Location permissions/settings changed |
+| `onGeofence` | Geofence boundary crossed |
+
+### Key Config Options
+| Option | Default | Purpose |
+|--------|---------|---------|
+| `desiredAccuracy` | HIGH | How accurate (affects battery) |
+| `distanceFilter` | 10m | Min meters between locations |
+| `stopOnTerminate` | true | Keep running after app close? |
+| `startOnBoot` | false | Auto-start on device reboot? |
+| `url` | null | Server endpoint for auto-sync |
+| `autoSync` | true | Automatically upload to server? |
+
+### Troubleshooting Checklist
+- [ ] Location permissions granted? (iOS: "Always", Android: "All the time")
+- [ ] Called `ready()` before `start()`?
+- [ ] Testing on physical device? (Emulator has limitations)
+- [ ] Actually moving? (Motion detection needs real movement)
+- [ ] GPS available? (Go outdoors if testing)
+- [ ] Check logs with `debug: true` and `logLevel: LOG_LEVEL_VERBOSE`
+
 ---
 
 **Still have questions?** The plugin has been field-tested daily since 2013 and is used in thousands of production applications. Check the repository's Wiki and Issues for more information.
