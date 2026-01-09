@@ -30,6 +30,7 @@ Also available for [Cordova](https://github.com/transistorsoft/cordova-backgroun
 - ### 🏗️ [How It Works](./HOW_IT_WORKS.md) - Simple explanation of background tracking
 - ### 🏛️ [Architecture Guide](./ARCHITECTURE.md) - Deep dive into plugin architecture
 - ### 📊 [Visual Diagrams](./DIAGRAMS.md) - State machines, flows, and architecture diagrams
+- ### ❓ [FAQ](./FAQ.md) - Frequently asked questions and troubleshooting
 - ### [Installing the Plugin](#-installing-the-plugin)
 - ### [Setup Guides](#-setup-guides)
 - ### [Using the plugin](#-using-the-plugin)
