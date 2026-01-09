@@ -27,6 +27,8 @@ Also available for [Cordova](https://github.com/transistorsoft/cordova-backgroun
 
 # Contents
 - ### 📚 [API Documentation](https://pub.dartlang.org/documentation/flutter_background_geolocation/latest/flt_background_geolocation/flt_background_geolocation-library.html)
+- ### 🏗️ [How It Works](./HOW_IT_WORKS.md) - Simple explanation of background tracking
+- ### 🏛️ [Architecture Guide](./ARCHITECTURE.md) - Deep dive into plugin architecture
 - ### [Installing the Plugin](#-installing-the-plugin)
 - ### [Setup Guides](#-setup-guides)
 - ### [Using the plugin](#-using-the-plugin)
